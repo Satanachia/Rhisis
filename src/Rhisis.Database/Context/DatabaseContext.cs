@@ -8,7 +8,6 @@ using Rhisis.Database.Entities;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
 
 namespace Rhisis.Database.Context
 {
@@ -40,6 +39,16 @@ namespace Rhisis.Database.Context
         /// Gets or sets the taskbar shortcuts.
         /// </summary>
         public DbSet<DbShortcut> TaskbarShortcuts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the quests.
+        /// </summary>
+        public DbSet<DbQuest> Quests { get; set; }
+
+        /// <summary>
+        /// Gets or sets the quest actions.
+        /// </summary>
+        public DbSet<DbQuestAction> QuestActions { get; set; }
 
         /// <summary>
         /// Create a new <see cref="DatabaseContext"/> instance.

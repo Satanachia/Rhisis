@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using Rhisis.Database.Context;
 using Rhisis.Database.Repositories;
 using Rhisis.Database.Repositories.Implementation;
@@ -21,6 +20,9 @@ namespace Rhisis.Database
 
         /// <inheritdoc />
         public IShortcutRepository TaskbarShortcuts { get; private set; }
+
+        /// <inheritdoc />
+        public IQuestRepository Quests { get; private set; }
 
         public DatabaseContext DatabaseContext { get; }
 
@@ -52,6 +54,7 @@ namespace Rhisis.Database
             this.Items = new ItemRepository(this.DatabaseContext);
             this.Mails = new MailRepository(this.DatabaseContext);
             this.TaskbarShortcuts = new ShortcutRepository(this.DatabaseContext);
+            this.Quests = new QuestRepository(this.DatabaseContext);
         }
     }
 }

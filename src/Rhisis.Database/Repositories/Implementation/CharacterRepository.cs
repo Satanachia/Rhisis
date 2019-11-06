@@ -41,9 +41,9 @@ namespace Rhisis.Database.Repositories.Implementation
         }
 
         /// <inheritdoc />
-        protected override IQueryable<DbCharacter> GetQueryable(DbContext context)
+        protected override IQueryable<DbCharacter> GetQueryable()
         {
-            return base.GetQueryable(context)
+            return base.GetQueryable()
                 .Include(x => x.User)
                 .Include(x => x.Items)
                 .Include(x => x.ReceivedMails)
